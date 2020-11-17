@@ -7,6 +7,7 @@
         <module>common</module>
         <module>eureka_jq_01</module>
         <module>eureka_jq_02</module>
+        <module>zuul_gateway</module>
     </modules>
     <groupId>com.cloud</groupId>
     <artifactId>jmhShop</artifactId>

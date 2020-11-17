@@ -5,7 +5,15 @@
     <packaging>pom</packaging>
     <modules>
         <module>common</module>
+        <module>eureka_jq_01</module>
+        <module>eureka_jq_02</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+    </dependencies>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>

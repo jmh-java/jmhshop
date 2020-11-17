@@ -3,18 +3,18 @@ server:
 
 spring:
   application:
-    name: zuul-gateway
+    name: zuul-gateway-service
 eureka:
   client:
     service-url:
-      defaultZone: https://eureka1.com:7001/eureka/
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
       #这是由于默认配置下eureka会把自己当成了客户端来注册自己。（在启动的时候，它会同时把自己当成客户端来注册自己。而在启动的过程中。它自己即使服务端又是客户端。服务端都还没启动好，客户端就去找肯定会报错！）
       # 所以我们需要禁用它的客户端默认的注册行为。在配置文件中加入：
-    register-with-eureka: false
-    fetch-registry: false
-
-
+    register-with-eureka: true
+    fetch-registry: true
 zuul:
+    prefix: /api # 添加路由前缀
+    retryable: true
     routes:
       api-a:
         serviceId: service-a
@@ -25,3 +25,16 @@ zuul:
       api-c:
         serviceId: comput-service
         path: /api/**
+ribbon:
+  ConnectTimeout: 250 # 连接超时时间(ms)
+  ReadTimeout: 2000 # 通信超时时间(ms)
+  OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 1 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 1 # 同一实例的重试次数
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 10000 # 熔断超时时长：10000ms

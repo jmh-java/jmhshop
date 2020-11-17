@@ -1,9 +1,9 @@
 server:
-  port: 81
+  port: 82
 
 spring:
   application:
-    name: zuul-gateway-service
+    name: zuul-gateway-service-01
 eureka:
   client:
     service-url:
@@ -38,6 +38,7 @@ hystrix:
         isolation:
           thread:
             timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
+
 #负载均衡配置
 spring-boot-user:
   ribbon:

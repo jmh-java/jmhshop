@@ -12,10 +12,10 @@
         <version>2.4.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.clound</groupId>
-    <artifactId>jmhshop</artifactId>
+    <groupId>com.cloud</groupId>
+    <artifactId>jmhShop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>jmhshop</name>
+    <name>jmhShop</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -29,6 +29,7 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--springCloud的依赖-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -37,6 +38,7 @@
                 <scope>import</scope>
             </dependency>
 
+            <!--springBoot的依赖-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -44,6 +46,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--mysql数据库-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
@@ -54,6 +57,7 @@
                 <artifactId>druid</artifactId>
                 <version>1.0.31</version>
             </dependency>
+            <!--mybatis-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -70,12 +74,13 @@
                 <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
+            <!--log4j的jar-->
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
-
+            <!--分页组件-->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper</artifactId>

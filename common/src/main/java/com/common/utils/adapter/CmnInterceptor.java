@@ -57,14 +57,6 @@ public class CmnInterceptor implements HandlerInterceptor {
             if("token".equals(key)) {
             	token = request.getHeader(key);
             }
-            if("sessionkey".equals(key)) {
-            	userid = request.getHeader(key);
-            	if(StringUtils.isBlank(userid)) {
-            		throw new ApiException(401,"缺少校验参数");
-                } else {
-                	map.put("sessionKey", new String[]{userid});
-                }
-            }
             if("sign".equals(key)) {
             	String sign = request.getHeader(key);
             	if(StringUtils.isBlank(sign)) {

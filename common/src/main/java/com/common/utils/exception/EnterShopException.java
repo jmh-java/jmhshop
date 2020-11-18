@@ -1,6 +1,6 @@
 package com.common.utils.exception;
 
-public enum EnterShopException implements MJException {
+public enum EnterShopException implements JmhShopException {
     CONDITION_CANNOT_BLANK(6001, "搜索条件不能为空"),
     ;
 

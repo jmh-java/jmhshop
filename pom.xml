@@ -8,12 +8,12 @@
         <module>eureka_jq_01</module>
         <module>eureka_jq_02</module>
         <module>zuul_gateway</module>
-        <module>provider_customer_infommaiton</module>
-        <module>zuul_gateway_rabbion_01</module>
+        <module>provider_customer_information</module>
+        <module>zuul_gateway_ribbon_01</module>
     </modules>
     <groupId>com.cloud</groupId>
     <artifactId>jmhShop</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,6 +22,7 @@
         <junit.version>4.12</junit.version>
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.18</lombok.version>
+        <mybatis.generator.plugin.version>1.3.5</mybatis.generator.plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -96,5 +97,4 @@
         </dependencies>
 
     </dependencyManagement>
-
 </project>

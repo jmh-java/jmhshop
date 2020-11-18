@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!--doc:https://blog.csdn.net/xp_lx1/article/details/80074738-->
+<generatorConfiguration>
+    <context id="Mysql" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+            <property name="autoDelimitKeywords" value="true" />
+            <property name="javaFileEncoding" value="UTF-8" />
+            <property name="beginningDelimiter" value="`" />
+            <property name="endingDelimiter" value="`" />
+            <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+            <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/study"
+                        userId="root" password="root" />
+        <!-- bean -->
+        <javaModelGenerator targetPackage="com.provider.customer.entity.account" targetProject="src/main/java" />
+        <!-- mapper映射文件 -->
+        <sqlMapGenerator targetPackage="account" targetProject="src/main/resources/mapper" />
+        <!-- mapper接口 -->
+        <javaClientGenerator targetPackage="com.provider.customer.dao.account" targetProject="src/main/java" type="XMLMAPPER" />
+        <table tableName="study_account" domainObjectName="StudyAccount"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+    </context>
+</generatorConfiguration>

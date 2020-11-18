@@ -1,5 +1,5 @@
 package com.common.utils;
-import com.common.utils.exception.MJException;
+import com.common.utils.exception.JmhShopException;
 public class ApiException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
@@ -20,7 +20,7 @@ public class ApiException extends RuntimeException {
         this.errcode = exceptionEnum.getErrcode();
     }
 
-    public ApiException(MJException exception) {
+    public ApiException(JmhShopException exception) {
         super(exception.getErrmsg());
         this.errcode = exception.getErrcode();
     }

@@ -1,6 +1,6 @@
 package com.common.utils.exception;
 
-public interface MJException {
+public interface JmhShopException {
     int getErrcode();
     String getErrmsg();
 }

@@ -2,9 +2,10 @@ server:
   port: 8001
 
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml  # mybatis配置文件所在路径
   type-aliases-package: com.provider.customer.entity                # 所有Pojo别名类所在包
   mapper-locations: classpath:mybatis/mapper/**/*.xml # mapper映射文件
+  configuration:
+    map-underscore-to-camel-case: true
 
 spring:
   application:
@@ -12,9 +13,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource      # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver        # mysql驱动包
-    url: jdbc:mysql://localhost:3306/app?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false        # 数据库名称
+    url: jdbc:mysql://localhost:3306/study?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false        # 数据库名称
     username: root
-    password: 123456
+    password: root
     dbcp2:
       min-idle: 5                 # 数据库连接池的最小维持连接数
       initial-size: 5             # 初始化连接数
@@ -31,4 +32,4 @@ eureka:
   client:
     service-url:
       #defaultZone: http://localhost:7001/eureka
-     defaultZone: https://eureka1.com:7001/eureka/,https://eureka2.com:7002/eureka/
+     defaultZone: http://eureka1.com:7001/eureka/,https://eureka2.com:7002/eureka/

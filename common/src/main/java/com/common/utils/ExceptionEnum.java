@@ -1,6 +1,7 @@
 package com.common.utils;
 
 public enum ExceptionEnum {
+    PARAM_ERROR(4001,"缺少参数"),
     TOKEN_ERR(5107,"token过期！"),
     TOKEN_MISS(5180,"未查到token！"),
     TOKEN_DEFAULT(5108,"解析token失败，或解析出的token没有主体！"),
